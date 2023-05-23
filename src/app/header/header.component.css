@@ -1,0 +1,40 @@
+*{
+    font-family: Courier;
+}
+
+.header{
+    background-color: red;
+}
+
+.header-sub-section-1{
+    float:left;
+}
+.header-sub-section-1 a{
+    text-decoration: none;
+}
+.header-sub-section-1 li{
+    margin-left:1rem;
+    display: inline-block;
+    padding:0.5rem 1rem 0.5rem 1rem;
+}
+.header-sub-section-1 li:hover{
+    background-color: aqua;
+    cursor:pointer;
+}
+.header-sub-section-2{
+    float:right;
+    list-style: none;
+}
+.header-sub-section-2 li{
+    margin-left:1rem;
+    display: inline-block;
+    padding:0.5rem 1rem 0.5rem 1rem;
+}
+.header-sub-section-2 li:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.header-sub-section-2 a{
+    text-decoration: none;
+}

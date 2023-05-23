@@ -1,0 +1,40 @@
+<div>
+  <h1>{{ title }}</h1>
+  <span><input type="text"  #inpt (keyup.enter)="search(inpt)" placeholder="search..."/></span>
+  <table id="customers" *ngIf="userData.length>0">
+    <thead>
+      <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th style="display:flex;justify-content: space-between;">Title <button style="display: inline;" (click)="ArrangeData()">Sort</button></th>
+        <th>completed</th>
+        <th>showData</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of userData">
+      <tr>
+        <td>{{ data.userId }}</td>
+        <td>{{ data.id }}</td>
+        <td>{{ data.title }}</td>
+        <td [ngStyle]="data.completed===true ?{'color':'blue'}:{'color':'red'}">{{ data.completed }}</td>
+        <td><button (click)="ViewData(data.userId)">view</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="customers" *ngIf="userData.length===0">
+    <thead>
+      <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th style="display:flex;justify-content: space-between;">Title <button style="display: inline;" (click)="ArrangeData()">Sort</button></th>
+        <th>completed</th>
+        <th>showData</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" [ngStyle]="{'background-color':'red','color':'white','text-align':'center'}">404 Data is not found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

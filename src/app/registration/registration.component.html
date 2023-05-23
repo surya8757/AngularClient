@@ -1,0 +1,27 @@
+<div class="regMain" style="padding: 1rem">
+  <h1>signUp</h1>
+  <form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>firstName</mat-label>
+      <input matInput placeholder="firstName"  formControlName="firstName" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>lastName</mat-label>
+      <input matInput placeholder="lastName"   formControlName="lastName" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email@gmail.com"  formControlName="email"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>password</mat-label>
+      <input matInput [type]="typeHandler?'text':'password'" placeholder="password" formControlName="password" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>confirm</mat-label>
+      <input matInput [type]="typeHandler?'text':'password'" placeholder="confirm" formControlName="confirmPassword" />
+    </mat-form-field>
+        <mat-checkbox (change)="typeHandler = !typeHandler" [checked] = "typeHandler" >show password</mat-checkbox>
+        <button mat-button color="primary">Create</button>
+  </form>
+</div>
